@@ -1,0 +1,473 @@
+{
+  "info": {
+    "_postman_id": "25e39216-65d7-423a-af66-124a991d2faa",
+    "name": "docintel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40727821",
+    "_collection_link": "https://go.postman.co/collection/40727821-25e39216-65d7-423a-af66-124a991d2faa?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "http://127.0.0.1:8000/health",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/health",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "http://127.0.0.1:8000/health",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/health",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 07:53:43 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "53"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"ok\",\n    \"service\": \"doc-intel\",\n    \"version\": \"1.0\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "http://127.0.0.1:8000/validate",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"envelope_id\": \"env_001\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-123\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"ABC Corp\", \"confidence\": 0.85},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.60},\n    \"commodity_desc\": {\"value\": \"portable computer machine\", \"confidence\": 0.90},\n    \"ship_date\": {\"value\": \"2026-03-20\", \"confidence\": 0.90}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/validate",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "validate"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "http://127.0.0.1:8000/validate",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"envelope_id\": \"env_001\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-123\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"ABC Corp\", \"confidence\": 0.85},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.60},\n    \"commodity_desc\": {\"value\": \"portable computer machine\", \"confidence\": 0.90},\n    \"ship_date\": {\"value\": \"2026-03-20\", \"confidence\": 0.90}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/validate",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "validate"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 07:54:25 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "791"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"envelope_id\": \"env_001\",\n    \"schema_version\": \"v1\",\n    \"extraction\": {\n        \"shipment_id\": {\n            \"value\": \"SHP-123\",\n            \"confidence\": 0.95\n        },\n        \"recipient_name\": {\n            \"value\": \"ABC Corp\",\n            \"confidence\": 0.85\n        },\n        \"commodity_code\": {\n            \"value\": \"8471.30.0100\",\n            \"confidence\": 0.6\n        },\n        \"commodity_desc\": {\n            \"value\": \"portable computer machine\",\n            \"confidence\": 0.9\n        },\n        \"ship_date\": {\n            \"value\": \"2026-03-20\",\n            \"confidence\": 0.9\n        }\n    },\n    \"processing_instructions\": {\n        \"workflow\": \"manifest-v1\",\n        \"confidence_threshold\": 0.8,\n        \"hitl_on_failure\": true\n    },\n    \"validation_results\": {\n        \"errors\": [],\n        \"low_confidence\": [\n            \"commodity_code\"\n        ]\n    },\n    \"matching_results\": null,\n    \"decision\": {\n        \"route\": \"hitl_review\"\n    },\n    \"audit\": [\n        {\n            \"timestamp\": \"2026-05-04 07:54:26.512576\",\n            \"service\": \"validation_service\",\n            \"action\": \"validate\",\n            \"envelope_id\": \"env_001\",\n            \"result\": \"hitl_review\",\n            \"details\": {\n                \"errors\": [],\n                \"low_conf\": [\n                    \"commodity_code\"\n                ]\n            }\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "http://127.0.0.1:8000/match",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"envelope_id\": \"env_002\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-123\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"ABC Corp\", \"confidence\": 0.85},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.50},\n    \"commodity_desc\": {\"value\": \"portable computing machine under 10kg\", \"confidence\": 0.95}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  },\n  \"audit\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/match",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "match"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "http://127.0.0.1:8000/match",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"envelope_id\": \"env_002\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-123\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"ABC Corp\", \"confidence\": 0.85},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.50},\n    \"commodity_desc\": {\"value\": \"portable computing machine under 10kg\", \"confidence\": 0.95}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  },\n  \"audit\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/match",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "match"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 08:03:21 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "927"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"envelope_id\": \"env_002\",\n    \"schema_version\": \"v1\",\n    \"extraction\": {\n        \"shipment_id\": {\n            \"value\": \"SHP-123\",\n            \"confidence\": 0.95\n        },\n        \"recipient_name\": {\n            \"value\": \"ABC Corp\",\n            \"confidence\": 0.85\n        },\n        \"commodity_code\": {\n            \"value\": \"8471.30.0100\",\n            \"confidence\": 0.5\n        },\n        \"commodity_desc\": {\n            \"value\": \"portable computing machine under 10kg\",\n            \"confidence\": 0.95\n        }\n    },\n    \"processing_instructions\": {\n        \"workflow\": \"manifest-v1\",\n        \"confidence_threshold\": 0.8,\n        \"hitl_on_failure\": true\n    },\n    \"validation_results\": null,\n    \"matching_results\": {\n        \"matched_code\": \"8471.30.0100\",\n        \"match_confidence\": 0.85,\n        \"rationale\": \"matches computing device\",\n        \"fallback_used\": true,\n        \"source\": \"llm_match\"\n    },\n    \"decision\": {\n        \"route\": \"hitl_review\"\n    },\n    \"audit\": [\n        {\n            \"timestamp\": \"2026-05-04 08:03:22.088457\",\n            \"service\": \"matching_service\",\n            \"action\": \"match\",\n            \"envelope_id\": \"env_002\",\n            \"result\": \"hitl_review\",\n            \"details\": {\n                \"matched_code\": \"8471.30.0100\",\n                \"match_confidence\": 0.85,\n                \"rationale\": \"matches computing device\",\n                \"fallback_used\": true,\n                \"source\": \"llm_match\"\n            }\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "http://127.0.0.1:8000/process",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"envelope_id\": \"env_003\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-999\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"XYZ Logistics\", \"confidence\": 0.70},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.50},\n    \"commodity_desc\": {\"value\": \"portable data processing machine\", \"confidence\": 0.96},\n    \"ship_date\": {\"value\": \"2026-03-20\", \"confidence\": 0.90}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  },\n  \"audit\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/process",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "process"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "http://127.0.0.1:8000/process",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"envelope_id\": \"env_003\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-999\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"XYZ Logistics\", \"confidence\": 0.70},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.50},\n    \"commodity_desc\": {\"value\": \"portable data processing machine\", \"confidence\": 0.96},\n    \"ship_date\": {\"value\": \"2026-03-20\", \"confidence\": 0.90}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  },\n  \"audit\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/process",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "process"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 08:09:11 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "1252"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"envelope_id\": \"env_003\",\n    \"schema_version\": \"v1\",\n    \"extraction\": {\n        \"shipment_id\": {\n            \"value\": \"SHP-999\",\n            \"confidence\": 0.95\n        },\n        \"recipient_name\": {\n            \"value\": \"XYZ Logistics\",\n            \"confidence\": 0.7\n        },\n        \"commodity_code\": {\n            \"value\": \"8471.30.0100\",\n            \"confidence\": 0.5\n        },\n        \"commodity_desc\": {\n            \"value\": \"portable data processing machine\",\n            \"confidence\": 0.96\n        },\n        \"ship_date\": {\n            \"value\": \"2026-03-20\",\n            \"confidence\": 0.9\n        }\n    },\n    \"processing_instructions\": {\n        \"workflow\": \"manifest-v1\",\n        \"confidence_threshold\": 0.8,\n        \"hitl_on_failure\": true\n    },\n    \"validation_results\": {\n        \"errors\": [],\n        \"low_confidence\": [\n            \"recipient_name\",\n            \"commodity_code\"\n        ]\n    },\n    \"matching_results\": {\n        \"matched_code\": \"8471.30.0100\",\n        \"match_confidence\": 0.85,\n        \"rationale\": \"matches computing device\",\n        \"fallback_used\": true,\n        \"source\": \"llm_match\"\n    },\n    \"decision\": {\n        \"route\": \"hitl_review\"\n    },\n    \"audit\": [\n        {\n            \"timestamp\": \"2026-05-04 08:09:11.955850\",\n            \"service\": \"validation_service\",\n            \"action\": \"validate\",\n            \"envelope_id\": \"env_003\",\n            \"result\": \"hitl_review\",\n            \"details\": {\n                \"errors\": [],\n                \"low_conf\": [\n                    \"recipient_name\",\n                    \"commodity_code\"\n                ]\n            }\n        },\n        {\n            \"timestamp\": \"2026-05-04 08:09:11.955850\",\n            \"service\": \"matching_service\",\n            \"action\": \"match\",\n            \"envelope_id\": \"env_003\",\n            \"result\": \"hitl_review\",\n            \"details\": {\n                \"matched_code\": \"8471.30.0100\",\n                \"match_confidence\": 0.85,\n                \"rationale\": \"matches computing device\",\n                \"fallback_used\": true,\n                \"source\": \"llm_match\"\n            }\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "http://127.0.0.1:8000/validate",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"envelope_id\": \"env_valid\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-101\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"ABC Pvt Ltd\", \"confidence\": 0.92},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.90}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  },\n  \"audit\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/validate",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "validate"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "http://127.0.0.1:8000/validate",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"envelope_id\": \"env_valid\",\n  \"schema_version\": \"v1\",\n  \"extraction\": {\n    \"shipment_id\": {\"value\": \"SHP-101\", \"confidence\": 0.95},\n    \"recipient_name\": {\"value\": \"ABC Pvt Ltd\", \"confidence\": 0.92},\n    \"commodity_code\": {\"value\": \"8471.30.0100\", \"confidence\": 0.90}\n  },\n  \"processing_instructions\": {\n    \"workflow\": \"manifest-v1\",\n    \"confidence_threshold\": 0.80,\n    \"hitl_on_failure\": true\n  },\n  \"audit\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/validate",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "validate"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 04 May 2026 08:40:26 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "644"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"envelope_id\": \"env_valid\",\n    \"schema_version\": \"v1\",\n    \"extraction\": {\n        \"shipment_id\": {\n            \"value\": \"SHP-101\",\n            \"confidence\": 0.95\n        },\n        \"recipient_name\": {\n            \"value\": \"ABC Pvt Ltd\",\n            \"confidence\": 0.92\n        },\n        \"commodity_code\": {\n            \"value\": \"8471.30.0100\",\n            \"confidence\": 0.9\n        }\n    },\n    \"processing_instructions\": {\n        \"workflow\": \"manifest-v1\",\n        \"confidence_threshold\": 0.8,\n        \"hitl_on_failure\": true\n    },\n    \"validation_results\": {\n        \"errors\": [],\n        \"low_confidence\": []\n    },\n    \"matching_results\": null,\n    \"decision\": {\n        \"route\": \"auto_approve\"\n    },\n    \"audit\": [\n        {\n            \"timestamp\": \"2026-05-04 08:40:26.886586\",\n            \"service\": \"validation_service\",\n            \"action\": \"validate\",\n            \"envelope_id\": \"env_valid\",\n            \"result\": \"auto_approve\",\n            \"details\": {\n                \"errors\": [],\n                \"low_conf\": []\n            }\n        }\n    ]\n}"
+        }
+      ]
+    }
+  ]
+}
